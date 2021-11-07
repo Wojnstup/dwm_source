@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 20;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -13,7 +13,7 @@ static const char col_gray1[]       = "#111111";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#c4037a";
+static const char col_cyan[]        = "#990096";  /* "#c4037a"; */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -63,8 +63,18 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run","-h", "20", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
+/* My scripts */
 static const char *pipecatcmd[] = { "/home/wojnstup/Media/pipecat-turbo.sh", NULL };
 static const char *killercmd[] = { "/home/wojnstup/Media/killer.sh", NULL };
+static const char *searchtermcmd[] = { "alacritty", "-e", "/home/wojnstup/Media/ddg.sh", NULL };
+static const char *pirokitcmd[] = { "/home/wojnstup/Media/pirokit", NULL };
+static const char *anicmd[] = { "alacritty", "-e", "/home/wojnstup/Media/ani-cli", "-H", NULL };
+
+/* Apps */
+static const char *elementcmd[] = { "surf","https://app.element.io/?pk_vid=8c5f5180c181a9601636221127319abc", NULL };
+static const char *browsercmd[] = { "librewolf", NULL };
+
+/* Volume commands */
 static const char *vollowcmd[] = { "amixer", "-c", "0", "set", "Master", "5%-", NULL };
 static const char *volhighcmd[] = { "amixer", "-c", "0", "set", "Master", "5%+", NULL };
 
@@ -92,10 +102,15 @@ static Key keys[] = {
 //	Custom keybindings
 	{ LAUNCHKEY,			XK_l,	   spawn, 	   {.v = pipecatcmd } },
 	{ LAUNCHKEY,                    XK_k,      spawn,          {.v = killercmd } },
+	{ LAUNCHKEY,                    XK_f,      spawn,          {.v = browsercmd } },
+	{ LAUNCHKEY,                    XK_e,      spawn,          {.v = elementcmd } },
+	{ LAUNCHKEY,                    XK_z,      spawn,          {.v = searchtermcmd } },
+	{ LAUNCHKEY,                    XK_a,      spawn,          {.v = anicmd } },
+	{ LAUNCHKEY,                    XK_t,      spawn,          {.v = pirokitcmd } },
 
 //	Volume
-	{ MODKEY,                    XK_minus,  spawn,          {.v = vollowcmd } },
-	{ MODKEY,                    XK_equal,  spawn,          {.v = volhighcmd } },
+	{ MODKEY,                    	XK_minus,  spawn,          {.v = vollowcmd } },
+	{ MODKEY,                    	XK_equal,  spawn,          {.v = volhighcmd } },
 
 //	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY,		        XK_t,  togglefloating, {0} },
