@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 20;        /* gaps between windows */
+static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -96,9 +96,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_space,  setlayout,      {.v = &layouts[2]} },
 //	GAPS
-	//{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	//{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
-	//{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+	{ MODKEY,                       XK_q,  	   setgaps,        {.i = -1 } },
+	{ MODKEY,                       XK_w,      setgaps,        {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_e,      setgaps,        {.i = 0  } },
 //	Custom keybindings
 	{ LAUNCHKEY,			XK_l,	   spawn, 	   {.v = pipecatcmd } },
 	{ LAUNCHKEY,                    XK_k,      spawn,          {.v = killercmd } },

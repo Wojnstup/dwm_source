@@ -1714,10 +1714,15 @@ tile(Monitor *m)
 			if (my + HEIGHT(c) < m->wh)
 				my += HEIGHT(c);
 		} else {
-			h = (m->wh - ty) / (n - i);
+			/*h = (m->wh - ty) / (n - i);
 			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
 			if (ty + HEIGHT(c) < m->wh)
 				ty += HEIGHT(c);
+				*/
+			h = (m->wh - ty) / (n - i) - m->gappx;
+			resize(c, m->wx + mw + m->gappx, m->wy + ty, m->ww - mw - (2*c->bw) - 2*m->gappx, h - (2*c->bw), 0);
+			if (ty + HEIGHT(c) < m->wh)
+				ty += HEIGHT(c) + m->gappx;
 		}
 }
 
