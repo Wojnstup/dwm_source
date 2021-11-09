@@ -1,0 +1,70 @@
+#Alacritty:
+
+env:
+  TERM: alacritty
+
+window:
+  padding:
+    x: 25
+    y: 25
+
+    dynamic_padding: true
+    decoration: none
+
+font:
+  normal:
+    family: Terminus
+
+  bold:
+    family: Terminus
+
+  italic:
+    family: Terminus
+
+  bold_italic:
+    family: Terminus
+
+  size: 12
+
+colors:
+  name: Erebus
+  author: ""
+  primary:
+    background: "#111111"
+    foreground: "#ffffff"
+  cursor:
+    text: "#000000"
+    cursor: "#ffffff"
+  normal:
+    black: "#757575"
+    red: "#ff5f5f"
+    green: "#de8a36"
+    yellow: "#d78787"
+    blue: "#af5fd7"
+    magenta: "#ff87d7"
+    cyan: "#dea3e5"
+    white: "#b8b8b8"
+  bright:
+    black: "#b8b8b8"
+    red: "#d78787"
+    green: "#ff9f6f"
+    yellow: "#ff5f5f"
+    blue: "#dea3e5"
+    magenta: "#d7afaf"
+    cyan: "#af5fd7"
+    white: "#757575"
+
+background_opacity: 0.9
+
+# cursor:
+#   style: Underline
+#   unfocused_hollow: false
+live_config_reload: true
+
+key_bindings:
+
+  - { key: Key0, mods: Control, action: ResetFontSize }
+
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
