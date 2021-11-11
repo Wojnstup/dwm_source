@@ -7,7 +7,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 20;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "Terminus" };
+static const char *fonts[]          = { "Terminus", "Noto Color Emoji", "fontawesome" };
 static const char dmenufont[]       = "Terminus";
 static const char col_gray1[]       = "#111111";
 static const char col_gray2[]       = "#444444";
@@ -21,7 +21,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
