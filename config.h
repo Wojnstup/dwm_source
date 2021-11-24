@@ -28,9 +28,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class      		instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",     		NULL,       NULL,       0,            0,           -1 },
+	{ "Firefox",  		NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "mpv",      		NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "librewolf",		NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "signal-desktop",     NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "firefox",		NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "discord",      	NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "obs",      		NULL,       NULL,       1 << 7,       0,           -1 },
 };
 
 /* layout(s) */
@@ -64,11 +70,12 @@ static const char *dmenucmd[] = { "dmenu_run","-h", "20", "-m", dmenumon, "-fn",
 static const char *termcmd[]  = { "alacritty", NULL };
 
 /* My scripts */
-static const char *pipecatcmd[] = { "/home/wojnstup/Media/pipecat-turbo.sh", NULL };
+static const char *pipecatcmd[] = { "pipecat-turbo", NULL };
 static const char *killercmd[] = { "/home/wojnstup/Media/killer.sh", NULL };
 static const char *searchtermcmd[] = { "alacritty", "-e", "/home/wojnstup/Media/ddg.sh", NULL };
 static const char *pirokitcmd[] = { "/home/wojnstup/Media/pirokit", NULL };
 static const char *anicmd[] = { "alacritty", "-e", "/home/wojnstup/Media/ani-cli", "-H", NULL };
+static const char *muscmd[] = { "alacritty", "-e", "/home/wojnstup/Media/pipecat.sh", NULL };
 
 /* Apps */
 static const char *elementcmd[] = { "surf","https://app.element.io/?pk_vid=8c5f5180c181a9601636221127319abc", NULL };
@@ -107,6 +114,7 @@ static Key keys[] = {
 	{ LAUNCHKEY,                    XK_z,      spawn,          {.v = searchtermcmd } },
 	{ LAUNCHKEY,                    XK_a,      spawn,          {.v = anicmd } },
 	{ LAUNCHKEY,                    XK_t,      spawn,          {.v = pirokitcmd } },
+	{ LAUNCHKEY,                    XK_m,      spawn,          {.v = muscmd } },
 
 //	Volume
 	{ MODKEY,                    	XK_minus,  spawn,          {.v = vollowcmd } },
@@ -148,3 +156,4 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+
